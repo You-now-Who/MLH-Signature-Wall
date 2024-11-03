@@ -46,6 +46,19 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #45a049;
 }
+
 .main {
     text-align: center;
+}
+
+#preview {
+    border: 1px solid #ccc;
+    padding: 20px; /* Padding for the preview area */
+    margin-top: 20px;
+    width: 100%; /* Make it full width */
+    max-width: 600px; /* Set a maximum width */
+    margin-left: auto; /* Center align */
+    margin-right: auto; /* Center align */
+    background-color: #f9f9f9; /* Light background color for better contrast */
+    font-size: 36px; /* Set larger font size for the text */
 }
