@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave your message</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Indie+Flower&family=Pacifico&family=Shadows+Into+Light&family=Satisfy&family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <h1>Leave a message...</h1>
+        <form action="/submit_note" method="post">
+            <label for="font">Choose a font:</label>
+            <select id="font" name="font">
+                <option value="Dancing Script" style="font-family: 'Dancing Script', cursive;">Dancing Script</option>
+                <option value="Indie Flower" style="font-family: 'Indie Flower', cursive;">Indie Flower</option>
+                <option value="Pacifico" style="font-family: 'Pacifico', cursive;">Pacifico</option>
+                <option value="Shadows Into Light" style="font-family: 'Shadows Into Light', cursive;">Shadows Into Light</option>
+                <option value="Satisfy" style="font-family: 'Satisfy', cursive;">Satisfy</option>
+                <option value="Great Vibes" style="font-family: 'Great Vibes', cursive;">Great Vibes</option>
+            </select>
+            <br><br>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br><br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" cols="50" required></textarea>
+            <br><br>
+            <input type="submit" value="Submit">
+        </form>
+        <div id="preview" style="border: 1px solid #ccc; padding: 10px; margin-top: 20px;"></div>
+    </div>
+    <script>
+        const fontSelect = document.getElementById('font');
+        const nameInput = document.getElementById('name');
+        const messageInput = document.getElementById('message');
+        const previewArea = document.getElementById('preview');
+
+        function updatePreview() {
+            previewArea.style.fontFamily = fontSelect.value;
+            previewArea.innerHTML = `<strong>${nameInput.value || "Your Name"}</strong><br>${messageInput.value || "Your Message"}`;
+        }
+
+        fontSelect.addEventListener('change', updatePreview);
+        nameInput.addEventListener('input', updatePreview);
+        messageInput.addEventListener('input', updatePreview);
+
+        // Initial preview update
+        updatePreview();
+    </script>
+</body>
+</html>

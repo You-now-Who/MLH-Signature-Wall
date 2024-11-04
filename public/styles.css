@@ -62,3 +62,12 @@ input[type="submit"]:hover {
     background-color: #f9f9f9; /* Light background color for better contrast */
     font-size: 36px; /* Set larger font size for the text */
 }
+
+.sign-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    margin-bottom: 20px;
+    background-image: "brick-wall.jpg";
+}

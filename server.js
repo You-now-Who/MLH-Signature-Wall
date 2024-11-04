@@ -27,6 +27,10 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+app.get('/message', (req, res) => {
+    res.sendFile(path.join(__dirname, 'leave_note.html'));
+});
+
 app.get('/submit.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'submit.html'));
 });
