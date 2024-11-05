@@ -11,7 +11,7 @@
     <div class="main-in">
         <div id="background-wrap">
             <div class="x1">
-                <div class="cloud"></div>
+                <div class="cloud" ></div>
             </div>
         
             <div class="x2">
@@ -31,11 +31,85 @@
             </div>
         </div>
         <h1 class="title-main">GHW Career Week</h1>
-        <!-- <h3 class="title-main">Leave your own message...</h3> -->
         <br/><br/>
-        <div class="brick-row">
-            <h3 > Hello, world!</h3>
+        <div class="brick-wall" id="brick-row">
+            <div class="brick-flex" id="brick-flex">
+                <!-- The messages would be displayed here using flexbox -->
+            </div>
         </div>
     </div>
+    <script>
+        // Sample JS code to dynamically update the height.
+
+
+        
+
+        names = [
+            {name: "John Doe", message: "I am a software engineer", font: "Arial"},
+            {name: "Jane Doe", message: "I am a data scientist", font: "Times New Roman"},
+            {name: "Alice Smith", message: "I love coding", font: "Verdana"},
+            {name: "Bob Johnson", message: "JavaScript is awesome", font: "Courier New"},
+            {name: "Charlie Brown", message: "Python is my favorite", font: "Georgia"},
+            {name: "David Wilson", message: "I enjoy learning new technologies", font: "Helvetica"},
+            {name: "Emma Davis", message: "Coding is my passion", font: "Tahoma"},
+            {name: "Frank Miller", message: "I am a full-stack developer", font: "Impact"},
+            {name: "Grace Lee", message: "I love solving problems", font: "Comic Sans MS"},
+            {name: "Henry Clark", message: "Web development is fun", font: "Lucida Console"},
+            {name: "Ivy Martinez", message: "I am a backend developer", font: "Arial Black"},
+            {name: "Jack White", message: "I enjoy working with databases", font: "Palatino"},
+            {name: "Karen Green", message: "Frontend development is my forte", font: "Garamond"},
+            {name: "Leo King", message: "I love creating mobile apps", font: "Trebuchet MS"},
+            {name: "Mia Scott", message: "Machine learning is fascinating", font: "Bookman"},
+            {name: "Nina Adams", message: "I am a cybersecurity enthusiast", font: "Candara"},
+            {name: "Oscar Brown", message: "DevOps is my specialty", font: "Consolas"},
+            {name: "Paul Walker", message: "I enjoy cloud computing", font: "Franklin Gothic"},
+            {name: "Quinn Harris", message: "I am passionate about AI", font: "Perpetua"},
+            {name: "Rachel Young", message: "I love data analysis", font: "Century Gothic"},
+            {name: "John Doe", message: "I am a software engineer", font: "Arial"},
+            {name: "Jane Doe", message: "I am a data scientist", font: "Times New Roman"},
+            {name: "Alice Smith", message: "I love coding", font: "Verdana"},
+            {name: "Bob Johnson", message: "JavaScript is awesome", font: "Courier New"},
+            {name: "Charlie Brown", message: "Python is my favorite", font: "Georgia"},
+            {name: "David Wilson", message: "I enjoy learning new technologies", font: "Helvetica"},
+            {name: "Emma Davis", message: "Coding is my passion", font: "Tahoma"},
+            {name: "Frank Miller", message: "I am a full-stack developer", font: "Impact"},
+            {name: "Grace Lee", message: "I love solving problems", font: "Comic Sans MS"},
+            {name: "Henry Clark", message: "Web development is fun", font: "Lucida Console"},
+            {name: "Ivy Martinez", message: "I am a backend developer", font: "Arial Black"},
+            {name: "Jack White", message: "I enjoy working with databases", font: "Palatino"},
+            {name: "Karen Green", message: "Frontend development is my forte", font: "Garamond"},
+            {name: "Leo King", message: "I love creating mobile apps", font: "Trebuchet MS"},
+            {name: "Mia Scott", message: "Machine learning is fascinating", font: "Bookman"},
+            {name: "Nina Adams", message: "I am a cybersecurity enthusiast", font: "Candara"},
+            {name: "Oscar Brown", message: "DevOps is my specialty", font: "Consolas"},
+            {name: "Paul Walker", message: "I enjoy cloud computing", font: "Franklin Gothic"},
+            {name: "Quinn Harris", message: "I am passionate about AI", font: "Perpetua"},
+            {name: "Rachel Young", message: "I love data analysis", font: "Century Gothic"},
+        ]
+
+        const messagesDiv = document.getElementById('brick-flex');
+        const rows = Math.ceil(names.length / 5);
+        
+        document.getElementById("brick-row").style.height = `${rows * 200 + 200 }px`;
+
+        if (names.length === 0) {
+            messagesDiv.innerHTML = '<p>No messages yet.</p>';
+        } else {
+            for (let i = 0; i < rows; i++) {
+                const row = document.createElement('div');
+                row.classList.add('brick-row');
+                messagesDiv.appendChild(row);
+                for (let j = 0; j < 5 && (i * 5 + j) < names.length; j++) {
+                    const name = names[i * 5 + j];
+                    const messageElement = document.createElement('div');
+                    messageElement.classList.add('brick');
+                    messageElement.style.fontFamily = name.font;
+
+                    messageElement.innerHTML = `<h2 class="brick-text">${name.name}</h2><p class="brick-text">${name.message}</p>`;
+                    row.appendChild(messageElement);
+                }
+            }
+        }
+    </script> 
 </body>
 </html>

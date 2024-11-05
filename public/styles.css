@@ -1,122 +1,149 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #edf3f7;  
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    
+  font-family: Arial, sans-serif;
+  background-color: #edf3f7;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
 }
 
 form {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
 }
 
 label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
 }
 
-input[type="text"], textarea, select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
 input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 input[type="submit"]:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
 
 .main {
-    text-align: center;
-    
+  text-align: center;
 }
 
 .main-bod {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #preview {
-    border: 1px solid #ccc;
-    padding: 20px; /* Padding for the preview area */
-    margin-top: 20px;
-    width: 100%; /* Make it full width */
-    max-width: 600px; /* Set a maximum width */
-    margin-left: auto; /* Center align */
-    margin-right: auto; /* Center align */
-    background-color: #f9f9f9; /* Light background color for better contrast */
-    font-size: 36px; /* Set larger font size for the text */
+  border: 1px solid #ccc;
+  padding: 20px; /* Padding for the preview area */
+  margin-top: 20px;
+  width: 100%; /* Make it full width */
+  max-width: 600px; /* Set a maximum width */
+  margin-left: auto; /* Center align */
+  margin-right: auto; /* Center align */
+  background-color: #f9f9f9; /* Light background color for better contrast */
+  font-size: 36px; /* Set larger font size for the text */
 }
 
 .main-in {
-    text-align: center;
-    width: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
+  text-align: center;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
 h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
 h3 {
-    font-size: 18px;
-    margin-bottom: 20px;
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
 .title-main {
-    position: fixed;
-    top: 25%;
-    width: 100%;
-    z-index: 1;
-    font-size: 50px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    font-weight: bold; 
-    letter-spacing: 2px; 
-    color:#000000c9;
+  position: fixed;
+  top: 25%;
+  width: 100%;
+  z-index: 1;
+  font-size: 50px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #000000c9;
+}
+
+.brick-wall {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 80%;
+  width: 100%;
+  height: 3000px;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url("brick_wall.jpg");
+  background-size: cover, 500px 500px;
+  background-repeat: no-repeat, repeat;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+  border-top: 5px solid white;
+  z-index: 2;
+}
+
+.brick-flex {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .brick-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 80%;
-    width: 100%;
-    height: 3000px;
-    background-image: 
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.4)), 
-        url("brick_wall.jpg");
-    background-size: cover, 500px 500px;
-    background-repeat: no-repeat, repeat;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-    border-top: 5px solid white;
-    z-index: 2;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
+.brick-text {
+    color: white;
+    text-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
