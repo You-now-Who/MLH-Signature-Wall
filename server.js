@@ -44,7 +44,7 @@ app.post('/submit_note', (req, res) => {
             res.status(500).send('An error occurred while saving your message.');
         } else {
             console.log('Message saved to database');
-            res.redirect('/submit.html');
+            res.redirect('/');
         }
     });
 });
