@@ -7,7 +7,9 @@
     <title>GHW Month</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="sky.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Indie+Flower&family=Pacifico&family=Shadows+Into+Light&family=Satisfy&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Indie+Flower&family=Pacifico&family=Shadows+Into+Light&family=Satisfy&family=Great+Vibes&display=swap"
+        rel="stylesheet">
     <!-- Handwriting Set 1 -->
     <link
         href="https://fonts.googleapis.com/css2?family=Caveat&family=Permanent+Marker&family=Kalam&family=Architects+Daughter&family=Covered+By+Your+Grace&family=Rock+Salt&family=Reenie+Beanie&family=Amatic+SC&family=Sacramento&family=Homemade+Apple&display=swap"
@@ -59,7 +61,7 @@
         </div>
         <!-- <h1 class="title-main">Signature Wall!</h1> -->
         <div class="header-container">
-            <h1 class="signature-header">404's Signature Wall</h1>
+            <h1 class="signature-header">GHW Signature Wall</h1>
         </div>
         <div class="button-container">
             <a href="message">
@@ -73,13 +75,12 @@
             </div>
         </div>
     </div>
-    <!-- <footer>
-        <div class="footer-container">
-            <div class="footer-content">
-                <p class="footer-text">Made with ❤️ by <a href="https://github.com/You-now-Who">You-know-Who</a></p>
-            </div>
+    <div class="footer-container" id="footer-container">
+        <div class="footer-content">
+            <p class="footer-text">Made with ❤️ by <a href="https://github.com/You-now-Who" class="linker">404</a>. Special
+                thanks to <a href="https://github.com/Malik-Legacy" class="linker">Malik</a>.</p>
         </div>
-    </footer> -->
+    </div>
     <script>
         fetch('/get_messages')
             .then(response => response.json())
@@ -89,7 +90,9 @@
                 const rows = Math.ceil(names.length / 5);
 
                 document.getElementById("brick-row").style.height = `${rows * 200 + 200}px`;
-
+                document.getElementById("footer-container").style.top = `${rows * 200 + 700}px`;
+                document.getElementById("footer-container").style.visibility = "visible";
+                
                 if (names.length === 0) {
                     messagesDiv.innerHTML = '<p>No messages yet.</p>';
                 } else {
@@ -126,4 +129,5 @@
             })
     </script>
 </body>
+
 </html>
