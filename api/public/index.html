@@ -75,12 +75,12 @@
             </div>
         </div>
     </div>
-    <div class="footer-container" id="footer-container">
+    <!-- <div class="footer-container" id="footer-container">
         <div class="footer-content">
             <p class="footer-text">Made with ❤️ by <a href="https://github.com/You-now-Who" class="linker">404_Not_Found</a>. Special
                 thanks to <a href="https://github.com/Malik-Legacy" class="linker">Void Burner</a>.</p>
         </div>
-    </div>
+    </div> -->
     <script>
         fetch('/get_messages')
             .then(response => response.json())
@@ -90,7 +90,13 @@
                 const rows = Math.ceil(names.length / 5);
 
                 document.getElementById("brick-row").style.height = `${rows * 200 + 200}px`;
-                document.getElementById("footer-container").style.visibility = "visible";
+                
+                const footerElement= document.getElementById("footer-container");
+                footerElement.style.visibility = "visible";
+                footerElement.style.bottom = 0;
+                footerElement.style.right = 0;
+                footerElement.style.marginRight = "10px";
+                footerElement.style.position = "fixed";
                 
                 if (names.length === 0) {
                     messagesDiv.innerHTML = '<p>No messages yet.</p>';
